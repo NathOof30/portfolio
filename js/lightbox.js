@@ -73,24 +73,16 @@ class Lightbox {
         const clickedImage = imageElements[index];
         const projectCard = clickedImage.closest('.carte-projet');
         
-        // Construire la liste des images pour ce projet
-        // Commencer par l'image principale cliquée
-        this.images = [clickedImage.src];
+        // Récupérer les images full quality depuis l'attribut data-images
+        const dataImages = projectCard.getAttribute('data-images');
         
-        // Vérifier s'il y a un attribut data-images avec d'autres images
-        const additionalImages = projectCard.getAttribute('data-images');
-        
-        if (additionalImages) {
-            // Si des images supplémentaires sont définies, les ajouter
-            const extraImages = additionalImages.split(',').map(img => img.trim());
-            // Trouver l'index de l'image actuelle dans la liste complète
-            const allImages = [clickedImage.src, ...extraImages];
-            this.currentIndex = 0; // Toujours commencer par l'image cliquée
-            
-            // Si on veut inclure toutes les images (y compris l'image principale)
-            this.images = allImages;
+        if (dataImages) {
+            // Les images sont déjà en full quality dans data-images
+            this.images = dataImages.split(',').map(img => img.trim());
+            this.currentIndex = 0; // Toujours commencer par la première image
         } else {
-            // Si pas d'images supplémentaires, on garde juste l'image principale
+            // Fallback : utiliser l'image principale
+            this.images = [clickedImage.src];
             this.currentIndex = 0;
         }
         

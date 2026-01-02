@@ -110,9 +110,13 @@ class PortfolioDataLoader {
 
         pageProjets.innerHTML = this.data.projects.categories.map(category => {
             const projectsHTML = category.projects.map(project => {
-                // Construire l'attribut data-images si des images supplémentaires existent
-                const dataImages = project.additionalImages && project.additionalImages.length > 0
-                    ? `data-images="${project.additionalImages.join(',')}"`
+                // Construire l'attribut data-images avec les images full quality
+                const allImages = [project.imageFullQuality || project.image];
+                if (project.additionalImages && project.additionalImages.length > 0) {
+                    allImages.push(...project.additionalImages);
+                }
+                const dataImages = allImages.length > 0
+                    ? `data-images="${allImages.join(',')}"`
                     : '';
 
                 // Construire les icônes de technologies
