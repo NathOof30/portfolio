@@ -177,6 +177,32 @@
                 if (typeof Lightbox !== 'undefined') {
                     new Lightbox();
                 }
+                
+                // Gérer le scroll vers l'ancre après le chargement des données
+                if (window.location.hash) {
+                    const targetId = window.location.hash;
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // Petit délai pour s'assurer que tout est rendu
+                        setTimeout(() => {
+                            targetElement.scrollIntoView({ 
+                                behavior: 'smooth', 
+                                block: 'center' 
+                            });
+                            
+                            // Ajouter un effet visuel temporaire
+                            targetElement.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+                            targetElement.style.transform = 'scale(1.02)';
+                            targetElement.style.boxShadow = '0 0 20px rgba(86, 171, 153, 0.5)';
+                            
+                            setTimeout(() => {
+                                targetElement.style.transform = '';
+                                targetElement.style.boxShadow = '';
+                            }, 1000);
+                        }, 200);
+                    }
+                }
             }, 100);
         });
     </script>

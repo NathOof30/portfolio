@@ -32,42 +32,48 @@
         "title": "Site d'un festival",
         "description": "Developpement et Intégration d'un site vitrine pour un festival des jeux indépendants. Conçu dans le cadre d'une épreuve.",
         "image": "iloveimg-compressed/Indie_game.png",
-        "alt": "Site d'un festival des jeux indépendants"
+        "alt": "Site d'un festival des jeux indépendants",
+        "link": "projets.html#projet-indie-game"
       },
       {
         "id": "resto-lavalee",
         "title": "Site d'un restaurant",
         "description": "Développement d'un site web dynamique pour un restaurent associatif fictif. Conçu en groupe lors d'une épreuve.",
         "image": "iloveimg-compressed/resto_lavalee.png",
-        "alt": "Site d'un restaurant associatif"
+        "alt": "Site d'un restaurant associatif",
+        "link": "projets.html#projet-resto-lavalee"
       },
       {
         "id": "refont-uniqlo",
         "title": "Refonte UX du site Uniqlo",
         "description": "Dans le cadre de mes cours d'UX , j'ai pu réaliser une refonte du site e-commerce Uniqlo afin d'améliorer l'expérience utilisateur.",
         "image": "iloveimg-compressed/refont_uniqlo.png",
-        "alt": "Refonte UX du site Uniqlo"
+        "alt": "Refonte UX du site Uniqlo",
+        "link": "projets.html#projet-refont-uniqlo"
       },
       {
         "id": "affiche-dell",
         "title": "Affiche 4/3",
         "description": "Dans le cadre d'un rebrand de la marque DELL, j'ai réalisé une affiche publicitaire au format 4/3.",
         "image": "iloveimg-compressed/affiche_dell.png",
-        "alt": "Affiche 4/3 Rebrand DELL"
+        "alt": "Affiche 4/3 Rebrand DELL",
+        "link": "projets.html#projet-affiche-dell"
       },
       {
         "id": "affiche-rolls",
         "title": "Matte Painting",
         "description": "L'une de mes premières réalisations sur Photoshop, réalisée dans le cadre d'une épreuve",
         "image": "iloveimg-compressed/affiche_rolls.jpg",
-        "alt": "Matte Painting Rolls-Royce"
+        "alt": "Matte Painting Rolls-Royce",
+        "link": "projets.html#projet-affiche-rolls"
       },
       {
         "id": "festival-empreinte",
         "title": "Affiche Festival",
         "description": "Description de l'affiche",
         "image": "iloveimg-compressed/festival_empreinte.png",
-        "alt": "Affiche Festival Empreintes"
+        "alt": "Affiche Festival Empreintes",
+        "link": "projets.html#projet-festival-empreinte"
       }
     ],
     "categories": [

@@ -91,13 +91,15 @@ class PortfolioDataLoader {
         const grilleProjets = document.querySelector('.section-projets .grille-projets');
         if (!grilleProjets) return;
 
-        // Remplacer complètement le contenu de la grille
+        // Remplacer complètement le contenu de la grille avec des liens
         grilleProjets.innerHTML = this.data.projects.homepage.map(project => `
-            <article class="projet-card">
-                <img class="projet-image" src="${project.image}" alt="${project.alt}" loading="lazy" decoding="async">
-                <h3>${project.title}</h3>
-                <p>${project.description}</p>
-            </article>
+            <a href="${project.link}" class="projet-card-link">
+                <article class="projet-card">
+                    <img class="projet-image" src="${project.image}" alt="${project.alt}" loading="lazy" decoding="async">
+                    <h3>${project.title}</h3>
+                    <p>${project.description}</p>
+                </article>
+            </a>
         `).join('');
     }
 
@@ -128,8 +130,9 @@ class PortfolioDataLoader {
                     </div>`
                     : '';
 
+                // Ajouter un ID unique pour chaque carte projet
                 return `
-                    <article class="carte-projet" ${dataImages}>
+                    <article class="carte-projet" id="projet-${project.id}" ${dataImages}>
                         <img src="${project.image}" alt="${project.alt}" class="img-projet">
                         <div class="contenu-projet">
                             <h3>${project.title}</h3>

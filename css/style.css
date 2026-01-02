@@ -275,7 +275,6 @@ body {
     border-radius: var(--radius-medium);
     min-height: 0;
     /* permet au grid de contrôler la hauteur */
-    text-align: center;
     overflow: hidden;
     content-visibility: auto;
     contain-intrinsic-size: 0 300px;
@@ -292,6 +291,16 @@ body {
     transition: var(--transition-medium);
 }
 
+.projet-card h3{
+    text-align: center;
+}
+
+.projet-card p {
+    padding: 0 15px;
+    font-size: 0.85rem;
+    flex-grow: 1;
+}
+
 /* Hover - Cartes projets */
 .projet-card:hover {
     transform: translateY(-4px); /* très léger déplacement */
@@ -305,6 +314,18 @@ body {
 .projet-card p {
     margin-bottom: 20px;
     font-weight: lighter;
+}
+
+/* ===== LIENS DES CARTES PROJETS ===== */
+.projet-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.projet-card-link:hover {
+    text-decoration: none;
 }
 
 /* règle générale pour médias */
