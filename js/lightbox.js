@@ -58,15 +58,6 @@ class Lightbox {
                     break;
             }
         });
-        
-        // Empêcher le scroll du body quand la lightbox est ouverte
-        this.lightbox.addEventListener('transitionend', () => {
-            if (this.lightbox.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
-        });
     }
     
     openLightbox(index, imageElements) {
@@ -85,6 +76,9 @@ class Lightbox {
             this.images = [clickedImage.src];
             this.currentIndex = 0;
         }
+        
+        // Masquer la scrollbar IMMÉDIATEMENT avant d'afficher la lightbox
+        document.body.style.overflow = 'hidden';
         
         this.showImage();
         this.lightbox.classList.add('active');
@@ -122,6 +116,7 @@ class Lightbox {
     
     closeLightbox() {
         this.lightbox.classList.remove('active');
+        // Réactiver le scroll après la fermeture
         document.body.style.overflow = '';
     }
 }
