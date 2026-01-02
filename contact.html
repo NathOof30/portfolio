@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact • Nathanaël Leang</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Parkinsans:wght@300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navigation">
+        <img src="images/logo.png" alt="logo Nathanaël Leang" class="logo">
+        <ul class="menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#apropos">À Propos</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Section principale -->
+    <main class="page-contact">
+        <!-- Partie gauche - Informations de contact -->
+        <section class="contact-infos">
+            <h2 class="titre-section">Contact</h2>
+
+            <div class="info-block">
+                <h3>Email :</h3>
+                <p><a href="mailto:nathanael.leang@gmail.com">nathanael.leang@gmail.com</a></p>
+            </div>
+
+            <div class="info-block">
+                <h3>Téléphone :</h3>
+                <p><a href="tel:+33769993517">+33 7 69 99 35 17</a></p>
+            </div>
+
+            <div class="info-block">
+                <h3>Adresse :</h3>
+                <p>1 route de Bernissart, Condé sur l'Escaut 59163</p>
+            </div>
+
+            <div class="info-block reseaux-block">
+                <h3>Réseaux :</h3>
+                <div class="reseaux-contact">
+                    <a href="#" class="icone-reseau-contact"><img src="images/icons/linkedin.png" alt="linkedin"></a>
+                    <a href="#" class="icone-reseau-contact"><img src="images/icons/github.png" alt="github"></a>
+                    <a href="#" class="icone-reseau-contact"><img src="images/icons/facebook.png" alt="facebook"></a>
+                    <a href="#" class="icone-reseau-contact"><img src="images/icons/insta.png" alt="instagram"></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partie droite - Formulaire de contact -->
+        <section class="contact-formulaire">
+            <h2 class="titre-section">Me contacter</h2>
+
+            <form>
+                <div class="champ-formulaire">
+                    <label for="nom-prenom">Prénom Nom</label>
+                    <input type="text" id="nom-prenom" name="nom-prenom" placeholder="Votre prénom et nom">
+                </div>
+
+                <div class="champ-formulaire">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" placeholder="votre@email.com">
+                </div>
+
+                <div class="champ-formulaire">
+                    <label for="sujet">Sujet :</label>
+                    <input type="text" id="sujet" name="sujet" placeholder="Sujet du message">
+                </div>
+
+                <div class="champ-formulaire">
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Votre message..."></textarea>
+                </div>
+
+                <button type="submit" class="bouton-envoyer">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="pied-page">
+        <div class="texte-footer">
+            <p>Réalisé par Nathanaël Leang</p>
+            <p>le 23/09/2025</p>
+        </div>
+        <div class="reseaux-sociaux">
+            <a href="#" class="icone-reseau"><img src="images/icons/linkedin.png" alt="linkedin"></a>
+            <a href="#" class="icone-reseau"><img src="images/icons/github.png" alt="github"></a>
+            <a href="#" class="icone-reseau"><img src="images/icons/facebook.png" alt="facebook"></a>
+            <a href="#" class="icone-reseau"><img src="images/icons/insta.png" alt="instagram"></a>
+        </div>
+    </footer>
+    
+    <!-- Chargement des données depuis JSON (compatible GitHub Pages) -->
+    <script src="js/data-loader.js"></script>
+</body>
+
+</html>

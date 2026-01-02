@@ -1,0 +1,232 @@
+================================================================================
+                    GUIDE DES CHANGEMENTS - SYSTÈME JSON
+================================================================================
+
+Ce document explique tous les changements apportés pour permettre la gestion
+des données via un fichier JSON, compatible avec GitHub Pages (hébergement
+statique gratuit).
+
+================================================================================
+1. FICHIERS CRÉÉS
+================================================================================
+
+✓ data/portfolio-data.json
+  - Fichier JSON contenant TOUTES les données du portfolio
+  - Structure organisée par sections (personal, skills, projects, footer)
+  - Modifiez ce fichier pour mettre à jour votre site
+
+✓ js/data-loader.js
+  - Script JavaScript qui charge le JSON et remplace le contenu HTML
+  - Compatible avec GitHub Pages (fonctionne sans serveur)
+  - Remplace automatiquement le contenu statique par les données du JSON
+
+================================================================================
+2. FICHIERS MODIFIÉS
+================================================================================
+
+✓ index.html
+  - Ajout du script : <script src="js/data-loader.js"></script>
+  - Le contenu HTML statique sera remplacé par les données du JSON
+  - Les projets, compétences, infos personnelles et footer sont chargés dynamiquement
+
+✓ projets.html
+  - Ajout du script : <script src="js/data-loader.js"></script>
+  - Le contenu HTML statique sera REMPLACÉ par les données du JSON
+  - Les catégories et projets sont générés automatiquement depuis le JSON
+  - La lightbox est réinitialisée après le chargement des données
+
+✓ contact.html
+  - Ajout du script : <script src="js/data-loader.js"></script>
+  - Le footer est chargé depuis le JSON
+
+================================================================================
+3. COMMENT ÇA FONCTIONNE
+================================================================================
+
+1. Au chargement de la page, le script data-loader.js s'exécute
+2. Il charge le fichier data/portfolio-data.json via fetch()
+3. Il remplace le contenu HTML statique par les données du JSON
+4. Tout fonctionne automatiquement, même sur GitHub Pages
+
+IMPORTANT : Le contenu HTML statique dans vos fichiers sert de "fallback"
+(contenu par défaut). Il sera remplacé par les données du JSON si le
+chargement réussit. Si le JSON ne charge pas, le contenu HTML par défaut
+reste affiché.
+
+================================================================================
+4. COMMENT MODIFIER VOS DONNÉES
+================================================================================
+
+Ouvrez simplement le fichier : data/portfolio-data.json
+
+STRUCTURE DU FICHIER :
+{
+  "personal": {
+    "firstName": "Votre prénom",
+    "lastName": "Votre nom",
+    "status": "Votre statut",
+    "tagline": "Votre phrase d'accroche",
+    "about": "Votre description",
+    "photo": "chemin/vers/photo.png"
+  },
+  "skills": {
+    "web": [{"name": "HTML", "icon": "images/icons/html.png"}, ...],
+    "adobe": [{"name": "Photoshop", "icon": "images/icons/photoshop.png"}, ...]
+  },
+  "projects": {
+    "homepage": [
+      {
+        "id": "identifiant-unique",
+        "title": "Titre du projet",
+        "description": "Description",
+        "image": "chemin/vers/image.png",
+        "alt": "Texte alternatif"
+      }
+    ],
+    "categories": [
+      {
+        "name": "Nom de la catégorie",
+        "projects": [
+          {
+            "id": "identifiant",
+            "title": "Titre",
+            "description": "Description",
+            "image": "chemin/image.png",
+            "alt": "Texte alternatif",
+            "additionalImages": ["image1.png", "image2.png"],  // Optionnel
+            "technologies": [{"name": "HTML", "icon": "..."}]  // Optionnel
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "text": "Texte du footer",
+    "updateDate": "JJ/MM/AAAA",
+    "socialMedia": [
+      {"name": "LinkedIn", "icon": "...", "url": "https://..."}
+    ]
+  }
+}
+
+================================================================================
+5. AJOUTER UN PROJET
+================================================================================
+
+POUR LA PAGE D'ACCUEIL :
+1. Ouvrez data/portfolio-data.json
+2. Ajoutez un objet dans "projects.homepage"
+3. Format :
+   {
+     "id": "mon-projet",
+     "title": "Mon Projet",
+     "description": "Description",
+     "image": "iloveimg-compressed/mon-image.png",
+     "alt": "Description de l'image"
+   }
+
+POUR LA PAGE PROJETS :
+1. Ouvrez data/portfolio-data.json
+2. Trouvez la catégorie appropriée dans "projects.categories"
+3. Ajoutez un projet dans le tableau "projects" de cette catégorie
+4. Format complet :
+   {
+     "id": "mon-projet",
+     "title": "Mon Projet",
+     "description": "Description complète",
+     "image": "images/projets/mon-image.png",
+     "alt": "Description",
+     "additionalImages": ["image1.png", "image2.png"],  // Images pour lightbox
+     "technologies": [
+       {"name": "HTML", "icon": "images/icons/html.png"},
+       {"name": "CSS", "icon": "images/icons/css-3.png"}
+     ]
+   }
+
+================================================================================
+6. MODIFIER LA DATE DE MISE À JOUR
+================================================================================
+
+Dans data/portfolio-data.json, modifiez simplement :
+"footer": {
+  "updateDate": "15/01/2026"  // Changez la date ici
+}
+
+La date apparaîtra automatiquement dans le footer de toutes les pages.
+
+================================================================================
+7. COMPATIBILITÉ GITHUB PAGES
+================================================================================
+
+✓ Le système fonctionne PARFAITEMENT sur GitHub Pages
+✓ Pas besoin de serveur
+✓ Le fichier JSON est servi comme un fichier statique
+✓ fetch() fonctionne normalement sur GitHub Pages
+
+IMPORTANT : Pour tester en local AVANT de publier :
+- Utilisez un serveur local (Live Server dans VS Code, ou python -m http.server)
+- Ne testez PAS en ouvrant directement le fichier HTML (file://)
+- Une fois sur GitHub Pages, tout fonctionne automatiquement
+
+================================================================================
+8. CE QUI EST REMPLACÉ AUTOMATIQUEMENT
+================================================================================
+
+PAGE D'ACCUEIL (index.html) :
+✓ Nom et prénom dans le header
+✓ Statut
+✓ Phrase d'accroche
+✓ Photo de profil
+✓ Texte "Qui suis-je"
+✓ Liste des projets (6 projets max)
+✓ Compétences Web
+✓ Compétences Adobe
+✓ Footer (texte + date de mise à jour)
+✓ Réseaux sociaux
+
+PAGE PROJETS (projets.html) :
+✓ TOUT le contenu est remplacé par les données du JSON
+✓ Catégories de projets
+✓ Projets avec leurs images, descriptions, technologies
+✓ Footer
+
+PAGE CONTACT (contact.html) :
+✓ Footer uniquement
+
+================================================================================
+9. DÉPANNAGE
+================================================================================
+
+Si les données ne se chargent pas :
+1. Vérifiez que data/portfolio-data.json existe
+2. Vérifiez que le JSON est valide (pas d'erreur de syntaxe)
+3. Ouvrez la console du navigateur (F12) pour voir les erreurs
+4. Vérifiez que js/data-loader.js est bien chargé dans vos pages HTML
+
+Si vous testez en local :
+- Utilisez un serveur local (pas file://)
+- Ou publiez directement sur GitHub Pages
+
+================================================================================
+10. AVANTAGES DE CE SYSTÈME
+================================================================================
+
+✓ Modifiez UN SEUL fichier (JSON) pour mettre à jour tout le site
+✓ Pas besoin de toucher au HTML
+✓ Facile à maintenir
+✓ Compatible GitHub Pages (gratuit)
+✓ Le contenu HTML sert de fallback si le JSON ne charge pas
+✓ Structure claire et organisée
+
+================================================================================
+FIN DU GUIDE
+================================================================================
+
+Pour toute question, vérifiez d'abord :
+1. Que le fichier JSON est valide
+2. Que les chemins des images sont corrects
+3. Que le script data-loader.js est bien chargé
+4. Que vous testez via un serveur (local ou GitHub Pages)
+
+Bon courage avec votre portfolio ! 🚀
+

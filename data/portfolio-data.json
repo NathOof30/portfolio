@@ -1,0 +1,167 @@
+{
+  "personal": {
+    "firstName": "Nathanaëllll",
+    "lastName": "Leang",
+    "status": "Étudiant MMI • Profil Web",
+    "tagline": "« Je conçois et développe des interfaces web modernes et créatives »",
+    "about": "Etudiant MMI en deuxième année avec spécialité web. Je suis curieux, organisé et créatif. J'ai découvert ma passion pour le web au lycée avec les cours d'NSI (Numérique et Science de l'Informatique), depuis j'essaie d'en apprendre un peu plus chaque jour.",
+    "photo": "images/photo_de_profil.png"
+  },
+  "skills": {
+    "web": [
+      { "name": "HTML", "icon": "images/icons/html.png" },
+      { "name": "CSS", "icon": "images/icons/css-3.png" },
+      { "name": "PHP", "icon": "images/icons/php.png" },
+      { "name": "Python", "icon": "images/icons/python.png" },
+      { "name": "Laravel", "icon": "images/icons/1969px-Laravel.svg.png" },
+      { "name": "GitHub", "icon": "images/icons/github.png" },
+      { "name": "MySQL", "icon": "images/icons/mysql-5-logo-svg-vector.png" },
+      { "name": "JavaScript", "icon": "images/icons/js.png" }
+    ],
+    "adobe": [
+      { "name": "Photoshop", "icon": "images/icons/photoshop.png" },
+      { "name": "InDesign", "icon": "images/icons/indesign.png" },
+      { "name": "Illustrator", "icon": "images/icons/illustrator.png" },
+      { "name": "After Effects", "icon": "images/icons/after-effects.png" }
+    ]
+  },
+  "projects": {
+    "homepage": [
+      {
+        "id": "indie-game",
+        "title": "Site d'un festival",
+        "description": "Description projet",
+        "image": "iloveimg-compressed/Indie_game.png",
+        "alt": "Site d'un festival des jeux indépendants"
+      },
+      {
+        "id": "resto-lavalee",
+        "title": "Site d'un restaurant",
+        "description": "Description projet",
+        "image": "iloveimg-compressed/resto_lavalee.png",
+        "alt": "Site d'un restaurant associatif"
+      },
+      {
+        "id": "refont-uniqlo",
+        "title": "Refonte UX du site Uniqlo",
+        "description": "Description projet",
+        "image": "iloveimg-compressed/refont_uniqlo.png",
+        "alt": "Refonte UX du site Uniqlo"
+      },
+      {
+        "id": "affiche-dell",
+        "title": "Affiche 4/3",
+        "description": "Description projet",
+        "image": "iloveimg-compressed/affiche_dell.jpg",
+        "alt": "Affiche 4/3 Rebrand DELL"
+      },
+      {
+        "id": "affiche-rolls",
+        "title": "Matte Painting",
+        "description": "Description projet",
+        "image": "iloveimg-compressed/affiche_rolls.jpg",
+        "alt": "Matte Painting Rolls-Royce"
+      },
+      {
+        "id": "festival-empreinte",
+        "title": "Affiche Festival",
+        "description": "Description projet",
+        "image": "iloveimg-compressed/festival_empreinte.png",
+        "alt": "Affiche Festival Empreintes"
+      }
+    ],
+    "categories": [
+      {
+        "name": "Projets Universitaires • WEB",
+        "projects": [
+          {
+            "id": "indie-game",
+            "title": "Site vitrine en WordPress",
+            "description": "Durant l'épreuve finale de la première année de BUT MMI, j'ai pu concevoir un site vitrine pour le festival européen des jeux vidéos \"IndieGames Fest\".",
+            "image": "images/projets/indie_game.png",
+            "alt": "Site vitrine en WordPress",
+            "additionalImages": [
+              "images/projets/refont_uniqlo.png",
+              "images/projets/resto_lavalee.png"
+            ],
+            "technologies": [
+              { "name": "HTML", "icon": "images/icons/html.png" },
+              { "name": "CSS", "icon": "images/icons/css-3.png" },
+              { "name": "WordPress", "icon": "images/icons/html.png" }
+            ]
+          },
+          {
+            "id": "refont-uniqlo",
+            "title": "Refonte UX du site Uniqlo",
+            "description": "Refonte d'un site e-commerce afin de proposer une meilleure expérience utilisateur et un design épuré.",
+            "image": "images/projets/refont_uniqlo.png",
+            "alt": "Refonte UX du site Uniqlo",
+            "additionalImages": [],
+            "technologies": []
+          },
+          {
+            "id": "resto-lavalee",
+            "title": "Développement et intégration d'un site de restaurant (fictif)",
+            "description": "Projet en groupe lors du premier semestre de BUT, avec mise en pratique des langages HTML, CSS et PHP.",
+            "image": "images/projets/resto_lavalee.png",
+            "alt": "Développement d'un site de restaurant",
+            "additionalImages": [],
+            "technologies": []
+          },
+          {
+            "id": "clone-instagram",
+            "title": "Réplication d'Instagram",
+            "description": "Projet personnel de développement front-end, visant à renforcer mes compétences en intégration.",
+            "image": "images/projets/clone_instagram.png",
+            "alt": "Réplication d'Instagram",
+            "additionalImages": [],
+            "technologies": []
+          }
+        ]
+      },
+      {
+        "name": "Projets Universitaires • Infographie",
+        "projects": [
+          {
+            "id": "affiche-dell",
+            "title": "Rebrand de la marque DELL",
+            "description": "Création d'un nouveau logo, d'une bannière Facebook et d'une affiche publicitaire 4x3.",
+            "image": "images/projets/affiche_dell.jpg",
+            "alt": "Rebrand de la marque DELL",
+            "additionalImages": [
+              "images/projets/dell_logo.png",
+              "images/projets/dell_banner.png"
+            ],
+            "technologies": [
+              { "name": "Illustrator", "icon": "images/icons/illustrator.png" },
+              { "name": "Photoshop", "icon": "images/icons/photoshop.png" }
+            ]
+          },
+          {
+            "id": "affiche-rolls",
+            "title": "Affiche publicitaire Rolls Royce",
+            "description": "Réalisation d'un matte painting avec Adobe Photoshop sur le thème du voyage et du luxe.",
+            "image": "images/projets/affiche_rolls.jpg",
+            "alt": "Affiche publicitaire Rolls Royce",
+            "additionalImages": [],
+            "technologies": [
+              { "name": "Photoshop", "icon": "images/icons/photoshop.png" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "text": "Portfolio réalisé par Nathanaël Leang",
+    "updateDate": "23/09/2025",
+    "socialMedia": [
+      { "name": "LinkedIn", "icon": "images/icons/linkedin.png", "url": "#" },
+      { "name": "GitHub", "icon": "images/icons/github.png", "url": "#" },
+      { "name": "Facebook", "icon": "images/icons/facebook.png", "url": "#" },
+      { "name": "Instagram", "icon": "images/icons/insta.png", "url": "#" }
+    ]
+  }
+}
+
+
