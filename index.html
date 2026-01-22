@@ -127,22 +127,26 @@
             <!-- Formulaire de contact -->
             <div class="formulaire-contact">
                 <h2>Me contacter</h2>
-                <form>
+                <form action="https://api.web3forms.com/submit" method="POST">
+
+                    <input type="hidden" name="access_key" value="c7b3300b-5f05-4b45-9596-93bbc6bd8fa4">
+                    <input type="hidden" name="redirect" value="https://nathoof30.github.io/portfolio/confirmation.html">
+
                     <div class="champ-formulaire">
                         <label for="nom-prenom">Prénom Nom:</label>
-                        <input type="text" id="nom-prenom" name="nom-prenom" placeholder="Votre prénom et nom">
+                        <input type="text" id="nom-prenom" name="nom-prenom" placeholder="Votre prénom et nom" required>
                     </div>
                     <div class="champ-formulaire">
                         <label for="email">Email :</label>
-                        <input type="email" id="email" name="email" placeholder="votre@email.com">
+                        <input type="email" id="email" name="email" placeholder="votre@email.com" required>
                     </div>
                     <div class="champ-formulaire">
                         <label for="sujet">Sujet :</label>
-                        <input type="text" id="sujet" name="sujet" placeholder="Sujet du message">
+                        <input type="text" id="sujet" name="sujet" placeholder="Sujet du message" required>
                     </div>
                     <div class="champ-formulaire">
                         <label for="message">Message :</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Votre message..."></textarea>
+                        <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
                     </div>
                     <button type="submit" class="bouton-envoyer">Envoyer</button>
                 </form>

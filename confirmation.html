@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message envoyé • Nathanaël Leang</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Parkinsans:wght@300..800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Styles spécifiques pour la page de confirmation */
+        .page-confirmation {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .confirmation-card {
+            background-color: var(--color-bg-secondary);
+            border: var(--border-standard);
+            border-radius: var(--radius-large);
+            padding: 60px 40px;
+            max-width: 600px;
+            box-shadow: var(--shadow-large);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .icone-succes {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            background-color: var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: scaleIn 0.5s ease-out 0.3s backwards;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .icone-succes::before {
+            content: "✓";
+            font-size: 3rem;
+            color: var(--color-bg-primary);
+            font-weight: bold;
+        }
+
+        .confirmation-card h1 {
+            font-family: 'Parkinsans', sans-serif;
+            color: var(--color-text);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .confirmation-card p {
+            color: var(--color-text);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .bouton-retour {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: var(--color-bg-primary);
+            padding: 15px 40px;
+            border-radius: var(--radius-small);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition-medium);
+            border: 3px solid var(--color-accent);
+        }
+
+        .bouton-retour:hover {
+            background-color: transparent;
+            color: var(--color-accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .bouton-retour:active {
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .confirmation-card {
+                padding: 40px 30px;
+            }
+
+            .confirmation-card h1 {
+                font-size: 1.6rem;
+            }
+
+            .confirmation-card p {
+                font-size: 1rem;
+            }
+
+            .icone-succes {
+                width: 60px;
+                height: 60px;
+            }
+
+            .icone-succes::before {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navigation">
+        <img src="images/logo.png" alt="logo Nathanaël Leang" class="logo">
+        <ul class="menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="apropos.html">À Propos</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pdf/CV_Nathanaël_Leang.pdf" target="_blank"
+                    rel="noopener noreferrer" id="CV">Mon CV</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page de confirmation -->
+    <main class="page-confirmation">
+        <div class="confirmation-card">
+            <div class="icone-succes"></div>
+            <h1>Message envoyé avec succès !</h1>
+            <p>
+                Merci pour votre message.<br>
+                Je vous répondrai dans les plus brefs délais à l'adresse email que vous avez fournie.
+            </p>
+            <a href="index.html" class="bouton-retour">Retour à l'accueil</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="contenu-footer">
+            <div class="texte-footer">
+                <p>&copy; 2025 Nathanaël Leang. Tous droits réservés.</p>
+                <p>Dernière mise à jour : Janvier 2026</p>
+            </div>
+            <div class="reseaux-sociaux">
+                <a href="#" class="icone-reseau" target="_blank" rel="noopener noreferrer">
+                    <img src="images/icons/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="#" class="icone-reseau" target="_blank" rel="noopener noreferrer">
+                    <img src="images/icons/github.png" alt="GitHub">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
