@@ -1,0 +1,325 @@
+{
+  "personal": {
+    "firstName": "Nathanaël",
+    "lastName": "Leang",
+    "status": "Étudiant MMI • Profil Web",
+    "tagline": "«Je conçois et développe des interfaces web modernes et créatives»",
+    "about": "Etudiant MMI en deuxième année avec spécialité web. Je suis curieux, organisé et créatif. J'ai découvert ma passion pour le web au lycée avec les cours d'NSI (Numérique et Science de l'Informatique), depuis j'essaie d'en apprendre un peu plus chaque jour.",
+    "photo": "images/photo_de_profil.png"
+  },
+  "skills": {
+    "web": [
+      {
+        "name": "HTML",
+        "icon": "images/icons/html.png"
+      },
+      {
+        "name": "CSS",
+        "icon": "images/icons/css-3.png"
+      },
+      {
+        "name": "PHP",
+        "icon": "images/icons/php.png"
+      },
+      {
+        "name": "WordPress",
+        "icon": "images/icons/wordpress.png"
+      },
+      {
+        "name": "Laravel",
+        "icon": "images/icons/1969px-Laravel.svg.png"
+      },
+      {
+        "name": "Git",
+        "icon": "images/icons/git.png"
+      },
+      {
+        "name": "MySQL",
+        "icon": "images/icons/mysql-5-logo-svg-vector.png"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "images/icons/js.png"
+      }
+    ],
+    "adobe": [
+      {
+        "name": "Photoshop",
+        "icon": "images/icons/photoshop.png"
+      },
+      {
+        "name": "InDesign",
+        "icon": "images/icons/indesign.png"
+      },
+      {
+        "name": "Illustrator",
+        "icon": "images/icons/illustrator.png"
+      },
+      {
+        "name": "After Effects",
+        "icon": "images/icons/after-effects.png"
+      }
+    ]
+  },
+  "projects": {
+    "homepage": [
+      {
+        "id": "indie-game",
+        "title": "Site pour un Festival <br> (Fictif)",
+        "description": "Developpement et Intégration d'un site vitrine pour un festival des jeux indépendants. Conçu dans le cadre d'une épreuve.",
+        "image": "images/projets/indiegame_1.png",
+        "alt": "Site d'un festival des jeux indépendants",
+        "link": "projets.html#projet-indie-game"
+      },
+      {
+        "id": "resto-lavalee",
+        "title": "Site pour un Restaurant <br> (Fictif)",
+        "description": "Développement d'un site web dynamique pour un restaurent associatif fictif. Conçu en groupe lors d'une épreuve.",
+        "image": "images/projets/lavallee_1.png",
+        "alt": "Site d'un restaurant associatif",
+        "link": "projets.html#projet-resto-lavalee"
+      },
+      {
+        "id": "refont-uniqlo",
+        "title": "Refonte UX du site Uniqlo",
+        "description": "Dans le cadre de mes cours d'UX , j'ai pu réaliser une refonte du site e-commerce Uniqlo afin d'améliorer l'expérience utilisateur.",
+        "image": "images/projets/uniqlo_1.png",
+        "alt": "Refonte UX du site Uniqlo",
+        "link": "projets.html#projet-refont-uniqlo"
+      },
+      {
+        "id": "affiche-dell",
+        "title": "Rebrand DELL",
+        "description": "Dans le cadre de mes cours d'infographie j'ai pu réaliser un rebrand de la marque DELL.",
+        "image": "images/projets/dell_1.png",
+        "alt": "Rebrand DELL",
+        "link": "projets.html#projet-affiche-dell"
+      },
+      {
+        "id": "affiche-rolls",
+        "title": "Matte Painting",
+        "description": "L'une de mes premières réalisations sur Photoshop, réalisée dans le cadre d'une épreuve",
+        "image": "images/projets/rolls_1.jpg",
+        "alt": "Matte Painting Rolls-Royce",
+        "link": "projets.html#projet-affiche-rolls"
+      },
+      {
+        "id": "affiche-empreinte",
+        "title": "Affiche Festival Empreintes",
+        "description": "Lors d'un de mes cours d'esthétique, j'ai pu réaliser une affiche publicitaire pour le festival Empreintes.",
+        "image": "images/projets/empreinte_1.jpg",
+        "alt": "Affiche Festival Empreintes",
+        "link": "projets.html#projet-affiche-empreinte"
+      }
+    ],
+    "categories": [
+      {
+        "name": "Projets Universitaires • WEB",
+        "projects": [
+          {
+            "id": "indie-game",
+            "title": "Site vitrine en WordPress",
+            "description": "Durant l'épreuve finale de la première année de BUT MMI, j'ai pu concevoir un site vitrine pour le festival européen des jeux vidéos \"IndieGames Fest\".",
+            "image": "images/projets/indiegame_1.png",
+            "imageFullQuality": "images/projets/indiegame_1.png",
+            "alt": "Site vitrine en WordPress",
+            "additionalImages": [
+              "images/projets/indiegame_2.png",
+              "images/projets/indiegame_3.png"
+            ],
+            "technologies": [
+              {
+                "name": "HTML",
+                "icon": "images/icons/html.png"
+              },
+              {
+                "name": "CSS",
+                "icon": "images/icons/css-3.png"
+              },
+              {
+                "name": "WordPress",
+                "icon": "images/icons/wordpress.png"
+              }
+            ]
+          },
+          {
+            "id": "refont-uniqlo",
+            "title": "Refonte UX du site Uniqlo",
+            "description": "Refonte d'un site e-commerce afin de proposer une meilleure expérience utilisateur et un design épuré.",
+            "image": "images/projets/uniqlo_1.png",
+            "imageFullQuality": "images/projets/uniqlo_1.png",
+            "alt": "Refonte UX du site Uniqlo",
+            "additionalImages": [],
+            "technologies": []
+          },
+          {
+            "id": "resto-lavalee",
+            "title": "Développement et intégration d'un site de restaurant (fictif)",
+            "description": "Projet en groupe lors du premier semestre de BUT, avec mise en pratique des langages HTML, CSS et PHP.",
+            "image": "images/projets/lavallee_1.png",
+            "imageFullQuality": "images/projets/lavallee_1.png",
+            "alt": "Développement d'un site de restaurant",
+            "additionalImages": [],
+            "technologies": []
+          },
+          {
+            "id": "clone-instagram",
+            "title": "Réplication d'Instagram",
+            "description": "Projet personnel de développement front-end, visant à renforcer mes compétences en intégration.",
+            "image": "images/projets/instagram_1.png",
+            "imageFullQuality": "images/projets/instagram_1.png",
+            "alt": "Réplication d'Instagram",
+            "additionalImages": [
+              "images/projets/instagram_2.png",
+              "images/projets/instagram_3.png"
+            ],
+            "technologies": [
+              {
+                "name": "HTML",
+                "icon": "images/icons/html.png"
+              },
+              {
+                "name": "CSS",
+                "icon": "images/icons/css-3.png"
+              },
+              {
+                "name": "JavaScript",
+                "icon": "images/icons/js.png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Projets Universitaires • Infographie",
+        "projects": [
+          {
+            "id": "affiche-dell",
+            "title": "Rebrand de la marque DELL",
+            "description": "Création d'un nouveau logo, d'une bannière Facebook et d'une affiche publicitaire 4x3.",
+            "image": "images/projets/dell_1.png",
+            "imageFullQuality": "images/projets/dell_1.png",
+            "alt": "Rebrand de la marque DELL",
+            "additionalImages": [
+              "images/projets/dell_2.jpg",
+              "images/projets/dell_3.png"
+            ],
+            "technologies": [
+              {
+                "name": "Illustrator",
+                "icon": "images/icons/illustrator.png"
+              },
+              {
+                "name": "Photoshop",
+                "icon": "images/icons/photoshop.png"
+              }
+            ]
+          },
+          {
+            "id": "affiche-rolls",
+            "title": "Affiche publicitaire Rolls Royce",
+            "description": "Réalisation d'un matte painting avec Adobe Photoshop sur le thème du voyage et du luxe.",
+            "image": "images/projets/rolls_1.jpg",
+            "imageFullQuality": "images/projets/rolls_1.jpg",
+            "alt": "Affiche publicitaire Rolls Royce",
+            "additionalImages": [],
+            "technologies": [
+              {
+                "name": "Photoshop",
+                "icon": "images/icons/photoshop.png"
+              }
+            ]
+          },
+          {
+            "id": "affiche-empreinte",
+            "title": "Affiche Festival Empreintes",
+            "description": "Lors d'un de mes cours d'esthétique, j'ai pu réaliser une affiche publicitaire pour le festival Empreintes.",
+            "image": "images/projets/empreinte_1.jpg",
+            "imageFullQuality": "images/projets/empreinte_1.jpg",
+            "alt": "Affiche Festival Empreintes",
+            "additionalImages": [],
+            "technologies": [
+              {
+                "name": "Photoshop",
+                "icon": "images/icons/photoshop.png"
+              }
+            ]
+          },
+          {
+            "id": "affiche-noel",
+            "title": "Affiche de Sensibilisation Noël",
+            "description": "Création d'une affiche de sensibilisation pour les personnes seules à Noël.",
+            "image": "images/projets/noel_1.png",
+            "imageFullQuality": "images/projets/noel_1.png",
+            "alt": "Affiche de Sensibilisation Noël",
+            "additionalImages": [
+              "images/projets/noel_2.png",
+              "images/projets/noel_3.png"
+            ],
+            "technologies": [
+              {
+                "name": "Photoshop",
+                "icon": "images/icons/photoshop.png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Projets Universitaires • Audiovisuel",
+        "projects": [
+          {
+            "id": "animation-discord",
+            "title": "Animation Logo Discord",
+            "description": "Animation du logo Discord en utilisant les principes de l'animation traditionnelle sur After Effects.",
+            "image": "images/projets/discord_1.gif",
+            "alt": "Animation Logo Discord",
+            "imageFullQuality": "images/projets/discord_1.gif",
+            "technologies": [
+              {
+                "name": "After Effects",
+                "icon": "images/icons/after-effects.png"
+              }
+            ]
+          },
+          {
+            "id": "webtv-mmi",
+            "title": "WebTV MMI",
+            "description" : "Participation à la création, organisation et réalisation d'un épisode d'une WebTV.",
+            "image": "images/projets/webtv_1.png",
+            "alt": "WebTV MMI",
+            "videos":[
+              "videos/webtv_vid_1.mp4"
+            ],
+            "technologies": []
+          }
+        ]
+      },
+      
+      {
+        "name": "Projets Personnels",
+        "projects": [
+          {
+            "id": ""
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "text": "Portfolio Nathanaël Leang",
+    "updateDate": "22/01/2026",
+    "socialMedia": [
+      {
+        "name": "LinkedIn",
+        "icon": "images/icons/linkedin.png",
+        "url": "https://www.linkedin.com/in/nathana%C3%ABl-leang-5b4938384/"
+      },
+      {
+        "name": "GitHub",
+        "icon": "images/icons/github.png",
+        "url": "https://github.com/NathOof30/"
+      }
+    ]
+  }
+}

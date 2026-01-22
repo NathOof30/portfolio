@@ -1,0 +1,262 @@
+/* ===== PAGE À PROPOS - STYLES SPÉCIFIQUES ===== */
+
+/* ===== QUI SUIS-JE ===== */
+.quisuisje-content {
+    display: flex;
+    gap: 30px;
+    margin: 80px 40px 40px 40px;
+}
+
+.photo-apropos {
+    flex: 0 0 auto;
+    width: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: var(--border-standard);
+}
+
+.photo-apropos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texte-apropos {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.texte-apropos p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ===== MON PARCOURS - TIMELINE ===== */
+.section-parcours {
+    position: relative;
+    border: var(--border-standard);
+    border-radius: var(--radius-large);
+    background-color: var(--color-bg-secondary);
+    margin-bottom: 40px;
+}
+
+.section-parcours h2 {
+    position: absolute;
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 1.2rem;
+    background-color: var(--color-accent);
+    padding: 7px 20px 7px 20px;
+    border-radius: var(--radius-small) 0 var(--radius-large) 0;
+    color: var(--color-bg-secondary);
+    z-index: 10;
+}
+
+.timeline-container {
+    margin: 80px 40px 50px 40px;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+}
+
+/* Ligne de la timeline - BLANCHE - passe à travers les points */
+.timeline-line {
+    position: absolute;
+    bottom: 28px;
+    left: 3%;
+    right: 10%;
+    height: 4px;
+    width: 87%;
+    background-color: var(--color-text);
+    border-radius: 2px;
+    z-index: 0;
+}
+
+/* Carte de la timeline - BUBBLE EFFECT */
+.timeline-card {
+    flex: 1;
+    min-height: 200px;
+    background-color: var(--color-accent);
+    /* Border-radius personnalisé : tous les coins arrondis SAUF bas-gauche */
+    border-radius: var(--radius-large) var(--radius-large) var(--radius-large) 0;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    transition: var(--transition-medium);
+    color: var(--color-bg-primary);
+}
+
+/* Point de connexion blanc avec la timeline */
+.timeline-card::after {
+    content: '';
+    position: absolute;
+    bottom: -25px;
+    left: -10px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-text);
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 0 3px var(--color-accent);
+}
+
+.timeline-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-large);
+}
+
+/* Année en gras */
+.timeline-year {
+    font-family: 'Parkinsans', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: var(--color-bg-primary);
+}
+
+/* Contenu de la carte */
+.timeline-card p {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.timeline-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== CENTRE D'INTÉRÊTS ===== */
+.centre-interets {
+    position: relative;
+    border: var(--border-standard);
+    border-radius: var(--radius-large);
+    flex: 1 1 auto;
+    min-height: 0;
+    background-color: var(--color-bg-secondary);
+}
+
+.centre-interets h2 {
+    position: absolute;
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 1.2rem;
+    background-color: var(--color-accent);
+    padding: 7px 20px 7px 20px;
+    border-radius: var(--radius-small) 0 var(--radius-large) 0;
+    color: var(--color-bg-secondary);
+}
+
+.liste-interets {
+    list-style: none;
+    margin: 80px 40px 40px 40px;
+    padding: 0;
+}
+
+.liste-interets li {
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    color: var(--color-text);
+    font-family: 'Noto Sans', sans-serif;
+    transition: var(--transition-fast);
+    padding-left: 5px;
+}
+
+.liste-interets li:hover {
+    color: var(--color-accent);
+    transform: translateX(5px);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablettes (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .timeline-container {
+        flex-direction: column;
+        gap: 25px;
+        margin: 80px 30px 30px 30px;
+    }
+
+    .timeline-line {
+        display: none;
+    }
+
+    .quisuisje-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 80px 30px 30px 30px;
+    }
+
+    .photo-apropos {
+        margin-bottom: 20px;
+    }
+}
+
+/* Tablettes petites et grands téléphones (max-width: 768px) */
+@media (max-width: 768px) {
+    .timeline-container {
+        margin: 80px 25px 25px 25px;
+        gap: 20px;
+    }
+
+    .timeline-card {
+        margin-bottom: 10px;
+    }
+
+    .quisuisje-content {
+        margin: 80px 25px 25px 25px;
+    }
+
+    .photo-apropos {
+        width: 120px;
+        height: 120px;
+    }
+
+    .liste-interets {
+        margin: 80px 25px 25px 25px;
+    }
+}
+
+/* Téléphones (max-width: 480px) */
+@media (max-width: 480px) {
+    .timeline-container {
+        margin: 80px 20px 20px 20px;
+        gap: 15px;
+    }
+
+    .timeline-header {
+        padding: 12px 15px;
+        font-size: 1rem;
+    }
+
+    .timeline-content {
+        padding: 15px;
+    }
+
+    .timeline-title {
+        font-size: 1rem;
+    }
+
+    .timeline-subtitle,
+    .timeline-location {
+        font-size: 0.85rem;
+    }
+
+    .quisuisje-content {
+        margin: 80px 20px 20px 20px;
+    }
+
+    .photo-apropos {
+        width: 100px;
+        height: 100px;
+    }
+
+    .liste-interets {
+        margin: 80px 20px 20px 20px;
+    }
+
+    .liste-interets li {
+        font-size: 0.95rem;
+    }
+}

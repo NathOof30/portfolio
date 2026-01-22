@@ -1,0 +1,384 @@
+/* ==========================
+   STYLES SPÉCIFIQUES À LA PAGE PROJETS
+   ========================== */
+
+.page-projets {
+    margin: 0 40px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* ===== TITRES DE CATÉGORIES ===== */
+.categorie-projets {
+    position: relative;
+    background-color: var(--color-bg-secondary);
+    border: var(--border-standard);
+    border-radius: var(--radius-large);
+    padding: 50px 0px 0px 0px;
+}
+
+.titre-categorie {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 1.2rem;
+    background-color: var(--color-accent);
+    color: var(--color-bg-secondary);
+    padding: 7px 20px 7px 20px;
+    border-radius: var(--radius-small) 0 var(--radius-large) 0;
+}
+
+/* ===== GRILLE DES PROJETS ===== */
+/* Desktop: 2 colonnes */
+.grille-projets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin: 80px 40px 40px 40px;
+    padding: 0;
+    width: calc(100% - 80px);
+    box-sizing: border-box;
+}
+
+/* ===== CARTES PROJET ===== */
+/* Chaque carte est un rectangle large (ratio 2:1).
+   À l'intérieur : image à gauche (~35%) et contenu à droite (~65%). */
+.carte-projet {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: var(--color-bg-primary);
+    border: var(--border-standard);
+    border-radius: var(--radius-medium);
+    overflow: hidden;
+    transition: var(--transition-medium);
+    /* Forcer ratio large:large — si la grille permet l'expansion, garder ratio 2:1 */
+    aspect-ratio: 2 / 1;
+    min-height: 220px;
+}
+
+/* effet de profondeur au survol */
+.carte-projet:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== IMAGE PROJET ===== */
+/* Image occupe ~35% de la largeur et s'étend sur toute la hauteur */
+.img-projet {
+    width: 35%;
+    height: 100%;
+    object-fit: cover;
+    background-color: var(--color-bg-secondary);
+    /* séparation visuelle en bas si besoin */
+    border-right: var(--border-medium);
+    display: block;
+}
+
+/* Placeholder (quand pas d'image) adapté au layout side-by-side */
+.img-placeholder {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    background-color: var(--color-accent-light);
+    border-right: var(--border-medium);
+    font-family: 'Parkinsans', sans-serif;
+    font-weight: 500;
+}
+
+/* ===== CONTENU PROJET ===== */
+/* Contenu prend le reste (≈65%), centré verticalement, icônes centrées horizontalement */
+.contenu-projet {
+    width: 65%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 30px 30px 30px;
+    gap: 12px;
+    min-width: 0;
+
+    padding-top: 40px;
+}
+
+.contenu-projet h3 {
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 1.2rem;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.contenu-projet p {
+    font-size: 0.90rem;
+    color: var(--color-text);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ===== ICÔNES TECHNO ===== */
+/* Centrer horizontalement les icônes dans la zone description */
+.icones-techno {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    justify-content: center;
+    /* centré horizontalement */
+    align-items: center;
+}
+
+.icones-techno img {
+    width: 35px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background-color: var(--color-accent);
+    border-radius: var(--radius-small);
+    padding: 5px;
+    transition: var(--transition-medium);
+}
+
+.icones-techno img:hover {
+    background-color: var(--color-text);
+    transform: scale(1.1) rotate(4deg);
+}
+
+/* ===== RESPONSIVE ===== */
+/* Medium screens: garder deux colonnes mais réduire hauteur des images */
+@media (max-width: 1100px) {
+    .page-projets {
+        margin: 0 20px 30px 20px;
+        gap: 40px;
+    }
+
+    .categorie-projets {
+        padding: 0;
+    }
+
+    .grille-projets {
+        gap: 25px;
+        margin: 80px 30px 40px 30px;
+        width: calc(100% - 60px);
+    }
+
+    .img-projet,
+    .img-placeholder {
+        /* légèrement réduire la part image pour écran moyen */
+        width: 36%;
+    }
+
+    .carte-projet {
+        min-height: 200px;
+    }
+}
+
+/* Small screens: passer en colonne — image au dessus, contenu en dessous */
+@media (max-width: 700px) {
+    .page-projets {
+        margin: 0 16px 20px 16px;
+        gap: 30px;
+    }
+
+    .grille-projets {
+        grid-template-columns: 1fr;
+        /* une colonne */
+        margin: 80px 20px 20px 20px;
+        width: calc(100% - 40px);
+    }
+
+    .carte-projet {
+        flex-direction: column;
+        aspect-ratio: auto;
+        min-height: auto;
+    }
+
+    .img-projet,
+    .img-placeholder {
+        width: 100%;
+        height: 200px;
+        border-right: none;
+        border-bottom: var(--border-medium);
+    }
+
+    .contenu-projet {
+        width: 100%;
+        padding: 18px;
+    }
+
+    .titre-categorie {
+        font-size: 1.1rem;
+        padding: 8px 18px;
+    }
+
+    .contenu-projet h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 57, 66, 0.95);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+}
+
+.lightbox.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-large);
+}
+
+.lightbox-counter {
+    color: var(--color-text);
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 1rem;
+    background-color: var(--color-bg-secondary);
+    padding: 8px 16px;
+    border-radius: var(--radius-small);
+    border: var(--border-medium);
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    background-color: var(--color-bg-secondary);
+    border: var(--border-standard);
+    color: var(--color-text);
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-medium);
+    z-index: 10001;
+    font-family: 'Parkinsans', sans-serif;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.lightbox-close {
+    top: 20px;
+    right: 20px;
+    font-size: 2.5rem;
+}
+
+.lightbox-prev {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-next {
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background-color: var(--color-accent);
+    color: var(--color-bg-primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-close:hover {
+    transform: scale(1.1);
+}
+
+.lightbox-close:active,
+.lightbox-prev:active,
+.lightbox-next:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.lightbox-close:active {
+    transform: scale(0.95);
+}
+
+/* Cacher les boutons de navigation s'il n'y a qu'une seule image */
+.lightbox.single-image .lightbox-prev,
+.lightbox.single-image .lightbox-next {
+    display: none;
+}
+
+/* Responsive lightbox */
+@media (max-width: 768px) {
+    .lightbox-content {
+        max-width: 95%;
+        max-height: 95%;
+    }
+
+    .lightbox-img {
+        max-height: 80vh;
+    }
+
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .lightbox-close {
+        top: 10px;
+        right: 10px;
+        font-size: 2rem;
+    }
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-next {
+        right: 10px;
+    }
+
+    .lightbox-counter {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}
+
+/* Rendre les images cliquables */
+.img-projet {
+    cursor: pointer;
+    transition: var(--transition-medium);
+}
+
+.img-projet:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}

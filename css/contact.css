@@ -1,0 +1,250 @@
+/* ==========================
+   STYLES SPÉCIFIQUES À LA PAGE CONTACT
+   ========================== */
+
+/* Conteneur principal */
+.page-contact {
+    margin: 0 40px 40px 40px;
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+}
+
+/* ===== SECTION INFORMATIONS DE CONTACT ===== */
+.contact-infos {
+    position: relative;
+    flex: 1 1 50%;
+    background-color: var(--color-bg-secondary);
+    border: var(--border-standard);
+    border-radius: var(--radius-large);
+    padding: 50px 40px 40px 40px;
+}
+
+.contact-infos .titre-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 1.2rem;
+    background-color: var(--color-accent);
+    color: var(--color-bg-secondary);
+    padding: 7px 20px 7px 20px;
+    border-radius: var(--radius-small) 0 var(--radius-large) 0;
+}
+
+/* Blocs d'information individuels */
+.info-block {
+    margin-bottom: 30px;
+}
+
+.info-block h3 {
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 1.1rem;
+    color: var(--color-text);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.info-block p {
+    color: var(--color-text);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.info-block a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: var(--transition-medium);
+}
+
+.info-block a:hover {
+    color: var(--color-accent);
+}
+
+/* Bloc réseaux sociaux */
+.reseaux-block {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: var(--border-medium);
+}
+
+.reseaux-contact {
+    display: flex;
+    gap: 20px;
+}
+
+.icone-reseau-contact {
+    aspect-ratio: 1 / 1;
+    max-width: 45px;
+    text-decoration: none;
+    color: var(--color-text);
+    overflow: hidden;
+    transition: var(--transition-medium);
+}
+
+.icone-reseau-contact img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.icone-reseau-contact:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* ===== SECTION FORMULAIRE DE CONTACT ===== */
+.contact-formulaire {
+    position: relative;
+    flex: 1 1 50%;
+    background-color: var(--color-bg-secondary);
+    border: var(--border-standard);
+    border-radius: var(--radius-large);
+    padding: 50px 40px 40px 40px;
+}
+
+.contact-formulaire .titre-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 1.2rem;
+    background-color: var(--color-accent);
+    color: var(--color-bg-secondary);
+    padding: 7px 20px 7px 20px;
+    border-radius: var(--radius-small) 0 var(--radius-large) 0;
+}
+
+.contact-formulaire form {
+    margin: 40px 0 0 0;
+    padding: 0;
+}
+
+.contact-formulaire .champ-formulaire {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-formulaire label {
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.contact-formulaire input,
+.contact-formulaire textarea {
+    padding: 12px 15px;
+    border-radius: var(--radius-small);
+    background-color: var(--color-bg-light);
+    border: none;
+    outline: none;
+    font-family: 'Noto Sans', sans-serif;
+    color: var(--color-bg-primary);
+    font-size: 0.95rem;
+    transition: var(--transition-medium);
+}
+
+.contact-formulaire input::placeholder,
+.contact-formulaire textarea::placeholder {
+    color: rgba(11, 57, 66, 0.5);
+}
+
+.contact-formulaire textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-formulaire input:focus,
+.contact-formulaire textarea:focus {
+    background-color: var(--color-text);
+    box-shadow: 0 0 0 2px var(--color-accent-light);
+}
+
+.contact-formulaire .bouton-envoyer {
+    width: auto;
+    margin-top: 20px;
+    padding: 12px 35px;
+    border: var(--border-standard);
+    border-radius: var(--radius-small);
+    cursor: pointer;
+    color: var(--color-text);
+    background-color: var(--color-bg-primary);
+    font-size: 1rem;
+    font-family: 'Parkinsans', sans-serif;
+    font-weight: bold;
+    transition: var(--transition-medium);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-formulaire .bouton-envoyer:hover {
+    background-color: var(--color-accent);
+    color: var(--color-bg-primary);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1000px) {
+    .page-contact {
+        margin: 0 30px 30px 30px;
+        gap: 30px;
+    }
+
+    .contact-infos,
+    .contact-formulaire {
+        padding: 50px 30px 30px 30px;
+    }
+
+    .contact-infos .titre-section,
+    .contact-formulaire .titre-section {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .page-contact {
+        flex-direction: column;
+        margin: 0 16px 20px 16px;
+        gap: 30px;
+    }
+
+    .contact-infos,
+    .contact-formulaire {
+        flex: 1 1 auto;
+        padding: 50px 20px 30px 20px;
+    }
+
+    .info-block {
+        margin-bottom: 25px;
+    }
+
+    .reseaux-block {
+        margin-top: 30px;
+        padding-top: 25px;
+    }
+
+    .reseaux-contact {
+        gap: 15px;
+    }
+
+    .contact-formulaire .champ-formulaire {
+        margin-bottom: 15px;
+    }
+
+    .contact-formulaire input,
+    .contact-formulaire textarea {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    .contact-formulaire textarea {
+        min-height: 120px;
+    }
+
+    .contact-formulaire .bouton-envoyer {
+        padding: 10px 25px;
+        font-size: 0.95rem;
+    }
+}
