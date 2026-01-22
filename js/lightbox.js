@@ -64,14 +64,15 @@ class Lightbox {
         const clickedImage = imageElements[index];
         const projectCard = clickedImage.closest('.carte-projet');
         
-        // Récupérer les médias (images et vidéos) depuis l'attribut data-media
+        // Récupérer les médias (images et vidéos YouTube) depuis l'attribut data-media
         const dataMedia = projectCard.getAttribute('data-media');
         
         if (dataMedia) {
             // Les médias sont au format: "type:chemin,type:chemin"
-            // Exemple: "image:photo.png,video:video.mp4"
+            // Exemple: "image:photo.png,youtube:https://www.youtube.com/watch?v=VIDEO_ID"
             this.media = dataMedia.split(',').map(item => {
-                const [type, path] = item.trim().split(':');
+                const [type, ...rest] = item.trim().split(':');
+                const path = rest.join(':'); // Pour supporter les URLs avec :
                 return { type: type.trim(), path: path.trim() };
             });
             this.currentIndex = 0;
@@ -103,27 +104,35 @@ class Lightbox {
         // Vider le contenu précédent
         this.lightboxContent.innerHTML = '';
         
-        if (currentMedia.type === 'video') {
-            // Créer un élément vidéo
-            const video = document.createElement('video');
-            video.src = currentMedia.path;
-            video.alt = `Vidéo ${this.currentIndex + 1} du projet`;
-            video.className = 'lightbox-media';
-            video.controls = true;
-            video.autoplay = true;
-            video.style.maxWidth = '90%';
-            video.style.maxHeight = '85vh';
-            video.style.borderRadius = 'var(--radius-medium)';
-            video.style.boxShadow = 'var(--shadow-large)';
+        if (currentMedia.type === 'youtube') {
+            // Extraire l'ID YouTube et créer un iframe
+            const youtubeId = this.extractYoutubeId(currentMedia.path);
             
-            this.lightboxContent.appendChild(video);
+            if (youtubeId) {
+                const iframe = document.createElement('iframe');
+                iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
+                iframe.className = 'lightbox-media lightbox-video';
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                iframe.allowFullscreen = true;
+                
+                // STYLES IDENTIQUES AUX IMAGES
+                iframe.style.width = '90vw';  // 90% de la largeur viewport
+                iframe.style.maxWidth = '1200px';  // Largeur max pour grands écrans
+                iframe.style.height = 'auto';
+                iframe.style.aspectRatio = '16 / 9';  // Ratio YouTube standard
+                iframe.style.borderRadius = 'var(--radius-medium)';
+                iframe.style.boxShadow = 'var(--shadow-large)';
+                iframe.style.border = 'none';
+                
+                this.lightboxContent.appendChild(iframe);
+            }
         } else {
             // Créer un élément image
             const img = document.createElement('img');
             img.src = currentMedia.path;
             img.alt = `Image ${this.currentIndex + 1} du projet`;
             img.className = 'lightbox-media';
-            img.style.maxWidth = '100%';
+            img.style.maxWidth = '90vw';
             img.style.maxHeight = '85vh';
             img.style.borderRadius = 'var(--radius-medium)';
             img.style.boxShadow = 'var(--shadow-large)';
@@ -157,12 +166,32 @@ class Lightbox {
         this.showMedia();
     }
     
+    extractYoutubeId(url) {
+        // Extraire l'ID YouTube depuis différents formats
+        // Format: https://www.youtube.com/watch?v=VIDEO_ID
+        // Format: https://youtu.be/VIDEO_ID
+        // Format: https://www.youtube.com/embed/VIDEO_ID
+        
+        const patterns = [
+            /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/,
+            /youtube\.com\/embed\/([^&\n?#]+)/
+        ];
+        
+        for (let pattern of patterns) {
+            const match = url.match(pattern);
+            if (match && match[1]) {
+                return match[1];
+            }
+        }
+        
+        return null;
+    }
+    
     closeLightbox() {
-        // Arrêter la vidéo en cours
-        const video = this.lightboxContent.querySelector('video');
-        if (video) {
-            video.pause();
-            video.currentTime = 0;
+        // Arrêter les iframes YouTube
+        const iframe = this.lightboxContent.querySelector('iframe');
+        if (iframe) {
+            iframe.src = iframe.src.replace('autoplay=1', 'autoplay=0');
         }
         
         this.lightbox.classList.remove('active');

@@ -288,19 +288,10 @@
             "description" : "Participation à la création, organisation et réalisation d'un épisode d'une WebTV.",
             "image": "images/projets/webtv_1.png",
             "alt": "WebTV MMI",
-            "videos":[
-              "videos/webtv_vid_1.mp4"
+            "youtubeLinks":[
+              "https://youtu.be/CDTdr3M4Olo"
             ],
             "technologies": []
-          }
-        ]
-      },
-      
-      {
-        "name": "Projets Personnels",
-        "projects": [
-          {
-            "id": ""
           }
         ]
       }

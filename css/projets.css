@@ -247,12 +247,25 @@
     gap: 20px;
 }
 
-.lightbox-img {
-    max-width: 100%;
+/* Styles communs pour images ET vidéos */
+.lightbox-media {
+    max-width: 90vw;
     max-height: 85vh;
-    object-fit: contain;
     border-radius: var(--radius-medium);
     box-shadow: var(--shadow-large);
+}
+
+/* Style spécifique pour les vidéos YouTube */
+.lightbox-video {
+    width: 90vw;
+    max-width: 1400px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+/* Style spécifique pour les images */
+.lightbox-media:not(.lightbox-video) {
+    object-fit: contain;
 }
 
 .lightbox-counter {
@@ -340,8 +353,13 @@
         max-height: 95%;
     }
 
-    .lightbox-img {
+    .lightbox-media {
+        max-width: 95vw;
         max-height: 80vh;
+    }
+
+    .lightbox-video {
+        width: 95vw;
     }
 
     .lightbox-close,

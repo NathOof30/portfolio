@@ -112,7 +112,7 @@ class PortfolioDataLoader {
 
         pageProjets.innerHTML = this.data.projects.categories.map(category => {
             const projectsHTML = category.projects.map(project => {
-                // Construire l'attribut data-media avec les images ET vidéos
+                // Construire l'attribut data-media avec les images ET vidéos YouTube
                 const allMedia = [];
                 
                 // Ajouter l'image principale
@@ -127,10 +127,10 @@ class PortfolioDataLoader {
                     });
                 }
                 
-                // Ajouter les vidéos
-                if (project.videos && project.videos.length > 0) {
-                    project.videos.forEach(video => {
-                        allMedia.push(`video:${video}`);
+                // Ajouter les vidéos YouTube
+                if (project.youtubeLinks && project.youtubeLinks.length > 0) {
+                    project.youtubeLinks.forEach(video => {
+                        allMedia.push(`youtube:${video}`);
                     });
                 }
                 
