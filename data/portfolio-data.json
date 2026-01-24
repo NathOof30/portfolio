@@ -160,7 +160,20 @@
             "imageFullQuality": "images/projets/lavallee_1.png",
             "alt": "Développement d'un site de restaurant",
             "additionalImages": [],
-            "technologies": []
+            "technologies": [
+              {
+                "name": "HTML",
+                "icon": "images/icons/html.png"
+              },
+              {
+                "name": "CSS",
+                "icon": "images/icons/css-3.png"
+              },
+              {
+                "name": "PHP",
+                "icon": "images/icons/php.png"
+              }
+            ]
           },
           {
             "id": "clone-instagram",
