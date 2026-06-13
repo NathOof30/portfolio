@@ -400,3 +400,33 @@
     opacity: 0.9;
     transform: scale(1.02);
 }
+
+/* ===================================================================
+   AMÉLIORATIONS VISUELLES — Page projets
+   =================================================================== */
+
+/* Catégories — fond avec dégradé */
+.categorie-projets {
+    background: linear-gradient(160deg, #162f37 0%, #13353C 100%);
+}
+
+/* Label de catégorie — dégradé accent */
+.titre-categorie {
+    background: linear-gradient(90deg, #56AB99 0%, #3c8f80 100%);
+}
+
+/* Cartes projet — fond sombre avec variation */
+.carte-projet {
+    background: linear-gradient(150deg, #0d2b32 0%, #122f36 100%);
+}
+
+/* Hover cartes — lueur accent + déplacement */
+.carte-projet:hover {
+    box-shadow: 0 10px 32px rgba(86, 171, 153, 0.2), 0 4px 14px rgba(0,0,0,0.35);
+    border-color: rgba(86, 171, 153, 0.75);
+}
+
+/* Icônes techno — dégradé */
+.icones-techno img {
+    background: linear-gradient(135deg, #5db8a5 0%, #469688 100%);
+}

@@ -260,3 +260,29 @@
         font-size: 0.95rem;
     }
 }
+
+/* ===================================================================
+   AMÉLIORATIONS VISUELLES — Page à propos
+   =================================================================== */
+
+/* Sections — fond avec dégradé */
+.section-parcours,
+.centre-interets {
+    background: linear-gradient(160deg, #162f37 0%, #13353C 100%);
+}
+
+/* Labels de section — dégradé accent */
+.section-parcours h2,
+.centre-interets h2 {
+    background: linear-gradient(90deg, #56AB99 0%, #3c8f80 100%);
+}
+
+/* Carte timeline — dégradé sur l'accent pour plus de profondeur */
+.timeline-card {
+    background: linear-gradient(145deg, #62c0ac 0%, #56AB99 50%, #469688 100%);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.timeline-card:hover {
+    box-shadow: 0 10px 28px rgba(0,0,0,0.28), 0 2px 8px rgba(86, 171, 153, 0.15);
+}

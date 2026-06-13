@@ -31,9 +31,15 @@
     --transition-slow: all 0.28s ease;
 
     /* Ombres légères (éviter ombres lourdes qui coûtent cher) */
-    --shadow-small: 0 2px 6px rgba(0,0,0,0.12);
-    --shadow-medium: 0 4px 10px rgba(0,0,0,0.12);
-    --shadow-large: 0 8px 18px rgba(0,0,0,0.14);
+    --shadow-small: 0 2px 6px rgba(0, 0, 0, 0.12);
+    --shadow-medium: 0 4px 10px rgba(0, 0, 0, 0.12);
+    --shadow-large: 0 8px 18px rgba(0, 0, 0, 0.14);
+
+    /* Dégradés et effets de profondeur */
+    --gradient-body: radial-gradient(ellipse at 20% 10%, #0f4757 0%, #0B3942 45%, #071e25 100%);
+    --gradient-section: linear-gradient(160deg, #162f37 0%, #13353C 100%);
+    --gradient-accent: linear-gradient(90deg, #56AB99 0%, #3c8f80 100%);
+    --glow-accent: 0 0 30px rgba(86, 171, 153, 0.12);
 }
 
 /* Reset de base */
@@ -43,12 +49,12 @@
     box-sizing: border-box;
 }
 
-#CV{
+#CV {
     background-color: var(--color-accent);
     color: var(--color-bg-secondary);
 }
 
-#CV:hover{
+#CV:hover {
     background-color: var(--color-bg-secondary);
     color: var(--color-accent);
 }
@@ -56,7 +62,7 @@
 body {
     font-family: 'Noto Sans', sans-serif;
     line-height: 1.6;
-    background-color: var(--color-bg-primary);
+    background: var(--gradient-body);
     color: var(--color-text);
     max-width: 1920px;
     margin: 0 auto;
@@ -72,7 +78,10 @@ body {
     margin-bottom: 20px;
     position: sticky;
     border-radius: 0 0 var(--radius-large) var(--radius-large);
-    background-color: #0b3942eb;
+    background: rgba(11, 57, 66, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     top: 0;
     z-index: 1000;
 
@@ -301,7 +310,7 @@ body {
     transition: var(--transition-medium);
 }
 
-.projet-card h3{
+.projet-card h3 {
     text-align: center;
 }
 
@@ -313,8 +322,10 @@ body {
 
 /* Hover - Cartes projets */
 .projet-card:hover {
-    transform: translateY(-4px); /* très léger déplacement */
-    box-shadow: var(--shadow-medium); /* ombre légère GPU-friendly */
+    transform: translateY(-4px);
+    /* très léger déplacement */
+    box-shadow: var(--shadow-medium);
+    /* ombre légère GPU-friendly */
 }
 
 .projet-card h3 {
@@ -429,8 +440,6 @@ video {
     position: relative;
     border: var(--border-standard);
     border-radius: var(--radius-large);
-    flex: 1 1 auto;
-    /* prend l'espace restant verticalement */
     min-height: 0;
     /* pour que overflow fonctionne */
     background-color: var(--color-bg-secondary);
@@ -597,8 +606,10 @@ form {
 
 /* Hover - Cartes projets */
 .projet-card:hover {
-    transform: translateY(-4px); /* très léger déplacement */
-    box-shadow: var(--shadow-medium); /* ombre légère GPU-friendly */
+    transform: translateY(-4px);
+    /* très léger déplacement */
+    box-shadow: var(--shadow-medium);
+    /* ombre légère GPU-friendly */
 }
 
 /* Click - Cartes projets */
@@ -901,4 +912,59 @@ form {
     .icone-reseau {
         max-width: 35px;
     }
+}
+
+/* ===================================================================
+   AMÉLIORATIONS VISUELLES — Dégradés et profondeur
+   Bloc séparé pour faciliter la maintenance / suppression
+   =================================================================== */
+
+/* Entête — dégradé directionnel + lueur accent subtile */
+.entete {
+    background: linear-gradient(145deg, #162f37 0%, #13353C 55%, #0c2e36 100%);
+    box-shadow: inset 0 0 80px rgba(86, 171, 153, 0.05), 0 6px 28px rgba(0, 0, 0, 0.22);
+}
+
+/* Sections principales — fond avec dégradé léger */
+.presentation-courte,
+.section-projets,
+.competences,
+.formulaire-contact {
+    background: var(--gradient-section);
+}
+
+/* Labels de section (h2 coin haut-gauche) — dégradé accent */
+.presentation-courte h2,
+.section-projets h2,
+.competences h2,
+.formulaire-contact h2 {
+    background: var(--gradient-accent);
+}
+
+/* Cartes projets (accueil) — fond sombre avec légère variation */
+.projet-card {
+    background: linear-gradient(150deg, #0e2d34 0%, #122f36 100%);
+}
+
+/* Hover cartes — lueur accent */
+.projet-card:hover {
+    box-shadow: 0 8px 28px rgba(86, 171, 153, 0.18), 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-color: rgba(86, 171, 153, 0.8);
+}
+
+/* Icônes compétences — dégradé */
+.icone {
+    background: linear-gradient(135deg, #5db8a5 0%, #469688 100%);
+}
+
+/* Boutons — dégradé au survol */
+.bouton-projets:hover,
+.bouton-envoyer:hover {
+    background: linear-gradient(135deg, #56AB99 0%, #3d9080 100%);
+    color: var(--color-bg-primary);
+}
+
+/* Pied de page — léger dégradé vers le bas */
+.pied-page {
+    background: linear-gradient(180deg, #13353C 0%, #0c2a30 100%);
 }
