@@ -64,6 +64,14 @@
   "projects": {
     "homepage": [
       {
+        "id": "fcspe-adiut",
+        "title": "Refonte FCSPE - ADIUT",
+        "description": "Refonte complète du site institutionnel sous WordPress en code natif PHP, développée dans le cadre de mon stage.",
+        "image": "images/projets/fcspe_1.png",
+        "alt": "Refonte de la plateforme web FCSPE - ADIUT",
+        "link": "projets.html#projet-fcspe-adiut"
+      },
+      {
         "id": "indie-game",
         "title": "Site pour un Festival <br> (Fictif)",
         "description": "Developpement et Intégration d'un site vitrine pour un festival des jeux indépendants. Conçu dans le cadre d'une épreuve.",
@@ -113,6 +121,34 @@
       }
     ],
     "categories": [
+      {
+        "name": "Projets Professionnels • Stage",
+        "projects": [
+          {
+            "id": "fcspe-adiut",
+            "title": "Refonte de la plateforme web FCSPE - ADIUT",
+            "description": "Refonte complète du site institutionnel sous WordPress en code natif PHP. J'ai développé des fonctionnalités sur mesure, comme des cartes interactives et des types de contenu personnalisés, tout en optimisant l'architecture. Une réalisation concrète axée sur l'autonomie technique et la propreté du code.",
+            "image": "images/projets/fcspe_1.png",
+            "imageFullQuality": "images/projets/fcspe_1.png",
+            "alt": "Refonte de la plateforme web FCSPE - ADIUT",
+            "additionalImages": [
+              "images/projets/fcspe_2.png",
+              "images/projets/fcspe_3.png",
+              "images/projets/fcspe_4.png"
+            ],
+            "technologies": [
+              {
+                "name": "WordPress",
+                "icon": "images/icons/wordpress.png"
+              },
+              {
+                "name": "PHP",
+                "icon": "images/icons/php.png"
+              }
+            ]
+          }
+        ]
+      },
       {
         "name": "Projets Universitaires • WEB",
         "projects": [
@@ -298,10 +334,10 @@
           {
             "id": "webtv-mmi",
             "title": "WebTV MMI",
-            "description" : "Participation à la création, organisation et réalisation d'un épisode d'une WebTV.",
+            "description": "Participation à la création, organisation et réalisation d'un épisode d'une WebTV.",
             "image": "images/projets/webtv_1.png",
             "alt": "WebTV MMI",
-            "youtubeLinks":[
+            "youtubeLinks": [
               "https://youtu.be/CDTdr3M4Olo"
             ],
             "technologies": []
@@ -312,7 +348,7 @@
   },
   "footer": {
     "text": "Portfolio Nathanaël Leang",
-    "updateDate": "22/01/2026",
+    "updateDate": "13/06/2026",
     "socialMedia": [
       {
         "name": "LinkedIn",
